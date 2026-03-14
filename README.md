@@ -1,42 +1,42 @@
-#  Car Rental Web App
+# Car Rental Web App
 
 A modern **Car Rental Web Application** built with the MERN stack that allows users to browse cars, book rentals, and manage bookings easily.
 
 ## ✨ Features
 
-* 🔐 User Authentication (Login / Register)
-* 🚘 Browse Available Cars
-* 📅 Book Cars for Specific Dates
-* 📖 View My Bookings
-* 🧑‍💼 Owner Dashboard
-* ➕ Add Cars for Rent
-* 🖼️ Image Upload for Cars
-* 🔍 Search Functionality
-* 📱 Fully Responsive Design
+- 🔐 User Authentication (Login / Register)
+- 🚘 Browse Available Cars
+- 📅 Book Cars for Specific Dates
+- 📖 View My Bookings
+- 🧑‍💼 Owner Dashboard
+- ➕ Add Cars for Rent
+- 🖼️ Image Upload for Cars
+- 🔍 Search Functionality
+- 📱 Fully Responsive Design
 
 ## 🛠️ Tech Stack
 
 ### Frontend
 
-* React.js
-* React Router
-* Tailwind CSS
-* Axios
-* React Hot Toast
-* Framer Motion
+- React.js
+- React Router
+- Tailwind CSS
+- Axios
+- React Hot Toast
+- Framer Motion
 
 ### Backend
 
-* Node.js
-* Express.js
-* MongoDB
-* Mongoose
-* JWT Authentication
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT Authentication
 
 ### Deployment
 
-* Frontend deployed on Vercel
-* Backend API support
+- Frontend deployed on Vercel
+- Backend API support
 
 ## 📂 Project Structure
 
@@ -113,9 +113,9 @@ GitHub: https://github.com/Vishal-Dev-2294
 
 ---
 
-## 🌍 Live 
+## 🌍 Live
 
-Click to see website: https://your-vercel-link.vercel.app
+Click to see website: https://car-rental-sigma-lac.vercel.app
 
 ---
 
