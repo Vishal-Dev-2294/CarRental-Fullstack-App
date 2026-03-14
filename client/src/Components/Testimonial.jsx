@@ -6,21 +6,21 @@ import { motion } from "motion/react";
 const Testimonial = () => {
   const testimonials = [
     {
-      name: "Virat Kholi",
+      name: "Emma",
       location: "Barcelona, Spain",
       image: assets.testimonial_image_1,
       testimonial:
         "I've have rented cars from various companies, but the experience with CarRental was exceptional",
     },
     {
-      name: "Omprakash",
+      name: "Olivia",
       location: "New York, USA",
       image: assets.testimonial_image_2,
       testimonial:
         "CarRental made my trip so much easier. The car was delivered right to my door, and the customer service was fantastic!",
     },
     {
-      name: "Deepak",
+      name: "Sophia",
       location: "Sydney, Australia",
       image: assets.testimonial_image_1,
       testimonial:
