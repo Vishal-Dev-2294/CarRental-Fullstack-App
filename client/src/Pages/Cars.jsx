@@ -54,6 +54,10 @@ const Cars = () => {
   };
 
   useEffect(() => {
+    setFilteredCars(cars);
+  }, [cars]);
+
+  useEffect(() => {
     isSearchData && searchCarAvailablity();
   }, []);
 
