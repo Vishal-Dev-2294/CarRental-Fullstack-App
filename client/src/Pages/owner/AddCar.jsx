@@ -208,10 +208,10 @@ const AddCar = () => {
             className="px-3 py-2 mt-1 border border-borderColor rounded-md outline-none"
           >
             <option value="">Select a location</option>
-            <option value="New York">New York</option>
-            <option value="Los Angeles">Los Angeles</option>
-            <option value="Houston">Houston</option>
-            <option value="chicago">chicago</option>
+            <option value="Ahmedabad">Ahmedabad</option>
+            <option value="Vadodara">Vadodara</option>
+            <option value="Surat">Surat</option>
+            <option value="Mumbai">Mumbai</option>
           </select>
         </div>
 
@@ -233,8 +233,8 @@ const AddCar = () => {
         <button className="flex items-center gap-2 px-4 py-2.5 mt-4 bg-primary text-white rounded-md font-medium w-max cursor-pointer">
           <img src={assets.tick_icon} alt="" />
           {isLoading ? "Listing..." : "List Your Car"}
-        </button>  
-      </form> 
+        </button>
+      </form>
     </div>
   );
 };
