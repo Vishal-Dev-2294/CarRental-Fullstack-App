@@ -27,6 +27,61 @@ const MyBookings = () => {
     user && fetchMyBookings();
   }, [user]);
 
+const initiatePayment = async (booking) => {
+  try {
+    // 🔥 check script loaded
+    if (!window.Razorpay) {
+      return toast.error("Payment SDK not loaded");
+    }
+
+    const { data } = await axios.post("/api/payment/create-order", {
+      amount: booking.price,
+      bookingId: booking._id,
+    });
+
+    if (!data.success) {
+      return toast.error("Order creation failed");
+    }
+
+    const options = {
+      key: import.meta.env.VITE_RAZORPAY_KEY,
+      amount: data.order.amount,
+      currency: "INR",
+      name: "Car Rental",
+      description: "Booking Payment",
+      order_id: data.order.id,
+
+      handler: async function (response) {
+        const verifyRes = await axios.post("/api/payment/verify", {
+          razorpay_order_id: response.razorpay_order_id,
+          razorpay_payment_id: response.razorpay_payment_id,
+          razorpay_signature: response.razorpay_signature,
+          bookingId: booking._id,
+        });
+
+        if (verifyRes.data.success) {
+          toast.success("Payment Successful 🎉");
+          fetchMyBookings();
+        } else {
+          toast.error("Payment Failed");
+        }
+      },
+
+      // ❌ agar user close kare popup
+      modal: {
+        ondismiss: function () {
+          toast.error("Payment Cancelled");
+        },
+      },
+    };
+
+    const rzp = new window.Razorpay(options);
+    rzp.open();
+  } catch (error) {
+    toast.error(error.message);
+  }
+};
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -118,6 +173,16 @@ const MyBookings = () => {
                   {booking.price}
                 </h1>
                 <p>Booked on {booking.createdAt.split("T")[0]}</p>
+
+                {/* 🔥 YE YAHA ADD KAR */}
+                {booking.paymentStatus !== "paid" && (
+                  <button
+                    onClick={() => initiatePayment(booking)}
+                    className="bg-primary text-white px-4 py-2 rounded mt-2"
+                  >
+                    Pay Now
+                  </button>
+                )}
               </div>
             </div>
           </motion.div>
